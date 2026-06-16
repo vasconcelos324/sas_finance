@@ -1,6 +1,6 @@
 "use client"
 
-import { BacenSeries, CATEGORY_META} from "@/lib/serie-bacen";
+import { BacenSeries, CATEGORY_META } from "@/lib/serie-bacen";
 import dynamic from "next/dynamic"
 import { useState } from "react";
 import { Button } from "../ui/button";
@@ -15,9 +15,6 @@ interface Props {
 
 export default function SeriesCard({ series }: Props) {
     const [range, setRange] = useState<string>("1A");
-    const catMeta = CATEGORY_META[series.category];
-    
-
     return (
         <div className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 flex flex-col gap-4 hover:border-slate-300 dark:hover:border-slate-700 hover:shadow-md transition-all duration-200">
             <div className="flex items-start justify-between gap-3">
@@ -26,7 +23,7 @@ export default function SeriesCard({ series }: Props) {
                         {series.name} - {series.code}
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-snug line-clamp-2">
-                        fonte:{series.fonte} 
+                        fonte:{series.fonte}
                     </p>
                 </div>
             </div>
