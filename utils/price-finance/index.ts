@@ -52,42 +52,60 @@ function getWeekOfMonth(dateString: string) {
   return Math.floor((day - 1) / 7) + 1;
 }
 
-export const aggregateByPeriod = (data: CandleData[], period: '1d' | '1w' | '1m') => {
-    if (period === '1d') return data
+export const aggregateByPeriod = (
+  data: CandleData[],
+  period: "1d" | "1w" | "1m",
+) => {
+  if (period === "1d") return data;
 
-    const groups = new Map<string, CandleData[]>()
-    for (const candle of data) {
+  const groups = new Map<string, CandleData[]>();
+  for (const candle of data) {
+    const [year, month] = candle.date.split("-");
 
-        const [year, month] = candle.date.split('-')
+    const key =
+      period === "1w"
+        ? `${year}-${month}-W${getWeekOfMonth(candle.date)}`
+        : `${year}-${month}`;
 
-        const key = period === '1w'
-            ? `${year}-${month}-W${getWeekOfMonth(candle.date)}`
-            : `${year}-${month}`
+    const group = groups.get(key) ?? [];
+    group.push(candle);
+    groups.set(key, group);
+  }
 
-        const group = groups.get(key) ?? []
-        group.push(candle)
-        groups.set(key, group)
-    }
+  const aggregated = Array.from(groups.entries())
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([, candles]) => {
+      const sorted = candles.sort((a, b) => a.date.localeCompare(b.date));
+      return {
+        date: sorted[sorted.length - 1].date,
+        open: sorted[0].open,
+        high: Math.max(...sorted.map((c) => c.high)),
+        low: Math.min(...sorted.map((c) => c.low)),
+        close: sorted[sorted.length - 1].close,
+        volume: sorted.reduce((sum, c) => sum + c.volume, 0),
+      };
+    })
 
-    const aggregated = Array.from(groups.entries())
-        .sort((a, b) => a[0].localeCompare(b[0]))
-        .map(([, candles]) => {
-            const sorted = candles.sort((a, b) => a.date.localeCompare(b.date))
-            return {
-                date: sorted[sorted.length - 1].date,
-                open: sorted[0].open,
-                high: Math.max(...sorted.map((c) => c.high)),
-                low: Math.min(...sorted.map((c) => c.low)),
-                close: sorted[sorted.length - 1].close,
-                volume: sorted.reduce((sum, c) => sum + c.volume, 0),
-            }
-        })
+    .sort((a, b) => a.date.localeCompare(b.date));
 
-        .sort((a, b) => a.date.localeCompare(b.date))
+  return aggregated;
+};
 
-    return aggregated
-} 
+export function calculateDrawdown(
+    data: { time: number; close: number }[]
+) {
+    let maxPrice = -Infinity
 
+    return data.map(item => {
+        maxPrice = Math.max(maxPrice, item.close)
+
+        return {
+            time: item.time,
+            value:
+                ((item.close - maxPrice) / maxPrice) * 100,
+        }
+    })
+}
 
 export const LISTTICKER_CONFIG = [
   {
