@@ -116,6 +116,7 @@ export const LISTTICKER_CONFIG = [
       { symbol: "^VIX", name: "VIX" },
       { symbol: "^GSPC", name: "S&P 500" },
       { symbol: "^IXIC", name: "NASDAQ" },
+      { symbol: "^DJI", name: "Índice Dow Jones" },
       { symbol: "DX-Y.NYB", name: "DXY" },
       { symbol: "^STOXX50E", name: "EURO STOXX" },
       { symbol: "^GDAXI", name: "DAX P " },
