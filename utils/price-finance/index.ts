@@ -126,6 +126,17 @@ export const LISTTICKER_CONFIG = [
     ],
   },
   {
+    group: "COMODITE",
+    items: [
+      { symbol: "BZ=F", name: "PETROLEO BRENT" },
+      { symbol: "CL=F", name: "PETROLEO LEVE" },
+      { symbol: "GC=F", name: "OURO" },
+      { symbol: "SI=F", name: "PRATA" },
+      { symbol: "BTC-USD", name: "BTC-USD" },
+
+    ],
+  },
+  {
     group: "IBOVESPA",
     items: [
       { symbol: "VALE3.SA", name: "VALE" },
