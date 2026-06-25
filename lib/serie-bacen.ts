@@ -21,7 +21,6 @@ export const SERIES: BacenSeries[] = [
   { code: 432,   name: "Meta Selic",                 fonte: "Copom",                                       unid: "%",               category: "Política Monetária",     color: "#7F77DD" },
 
   { code: 24363, name: "IBC-Br",                     fonte: "BCB-Depec",                                   unid: "ind",             category: "Atividade Econômica",    color: "#FAC775" },
-  { code: 13762, name: "Dívida Bruta/PIB",           fonte: "BCB-DSTAT",                                   unid: "%",               category: "Atividade Econômica",    color: "#FAC775" },
   { code: 24369, name: "Desemprego",                 fonte: "IBGE",                                        unid: "%",               category: "Atividade Econômica",    color: "#FAC775" },
   { code: 4192,  name: "PIB",                        fonte: "IBGE",                                        unid: "US$ (milhões)",   category: "Atividade Econômica",    color: "#FAC775" },
   { code: 4382,  name: "PIB CORRENTE",               fonte: "IBGE",                                        unid: "R$ (milhões)",    category: "Atividade Econômica",    color: "#FAC775" },
@@ -32,11 +31,14 @@ export const SERIES: BacenSeries[] = [
   { code: 188,   name: "INPC",                       fonte: "IBGE",                                        unid: "%",               category: "Inflação",               color: "#1D9E75" },
   { code: 189,   name: "IGP-M",                      fonte: "FGV",                                         unid: "%",               category: "Inflação",               color: "#1D9E75" },
   { code: 13521, name: "Meta de Inflação",           fonte: "BCB-Depec",                                   unid: "%",               category: "Inflação",               color: "#1D9E75" },
-
+  
   { code: 3546,  name: "Reservas Internac.",         fonte: "BCB-DSTAT",                                   unid: "US$ (milhões)",   category: "Câmbio e Setor Externo", color: "#185FA5" },
   { code: 22707, name: "Balança Comercial-Saldo",    fonte: "BCB-DSTAT",                                   unid: "US$ (milhões)",   category: "Câmbio e Setor Externo", color: "#85B7EB" },
+  
+  { code: 13762, name: "Dív Bruta Gov Geral/PIB",    fonte: "BCB-DSTAT",                                   unid: "%",               category: "Setor Fiscal",           color: "#FAC775" },
+  { code: 4505,  name: "Dív Liq Set Publ/PIB",       fonte: "BCB-DSTAT",                                   unid: "%",               category: "Setor Fiscal",           color: "#FAC775" },
 
-  { code: 5793,  name: "Resultado Primário",         fonte: "	BCB-DSTAT",                                  unid: "%",               category: "Setor Fiscal",           color: "#D4537E" },
+
   { code: 27788, name: "Meios de pagamento - M1",    fonte: "BCB-DSTAT",                                   unid: "u.m.c. (mil)",    category: "Crédito",                color: "#F0997B" },
   { code: 21082, name: "Inadimplência",              fonte: "BCB-DSTAT",                                   unid: "%",               category: "Crédito",                color: "#F5C4B3" },
   
