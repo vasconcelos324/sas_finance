@@ -34,11 +34,12 @@ export const SERIES: BacenSeries[] = [
   { code: 13521, name: "Meta de Inflação",           fonte: "BCB-Depec",                                   unid: "%",               category: "Inflação",               color: "#1D9E75" },
 
   { code: 3546,  name: "Reservas Internac.",         fonte: "BCB-DSTAT",                                   unid: "US$ (milhões)",   category: "Câmbio e Setor Externo", color: "#185FA5" },
-  { code: 22707, name: "Balança Comercial-Saldo",    fonte: "Exportações menos importações",               unid: "US$ (milhões)",   category: "Câmbio e Setor Externo", color: "#85B7EB" },
+  { code: 22707, name: "Balança Comercial-Saldo",    fonte: "BCB-DSTAT",                                   unid: "US$ (milhões)",   category: "Câmbio e Setor Externo", color: "#85B7EB" },
 
   { code: 5793,  name: "Resultado Primário",         fonte: "	BCB-DSTAT",                                  unid: "%",               category: "Setor Fiscal",           color: "#D4537E" },
   { code: 27788, name: "Meios de pagamento - M1",    fonte: "BCB-DSTAT",                                   unid: "u.m.c. (mil)",    category: "Crédito",                color: "#F0997B" },
   { code: 21082, name: "Inadimplência",              fonte: "BCB-DSTAT",                                   unid: "%",               category: "Crédito",                color: "#F5C4B3" },
+  
 ];
 
 
