@@ -21,7 +21,7 @@ export const SERIES: BacenSeries[] = [
   { code: 432,   name: "Meta Selic",                 fonte: "Copom",                                       unid: "%",               category: "Política Monetária",     color: "#7F77DD" },
   { code: 13522, name: "IPCA",                       fonte: "IBGE",                                        unid: "%"     ,          category: "Inflação",               color: "#1D9E75" },
   { code: 24363, name: "IBC-Br",                     fonte: "BCB-Depec",                                   unid: "ind",             category: "Atividade Econômica",    color: "#993556" },
-  { code: 13762, name: "Dívida Bruta/PIB",           fonte: "BCB-DSTAT",                                   unid: "ind",             category: "Atividade Econômica",    color: "#993556" },
+  { code: 13762, name: "Dívida Bruta/PIB",           fonte: "BCB-DSTAT",                                   unid: "%",             category: "Atividade Econômica",    color: "#993556" },
   { code: 24369, name: "Desemprego",                 fonte: "IBGE",                                        unid: "%",               category: "Atividade Econômica",    color: "#FAC775" },
   { code: 433,   name: "IPCA",                       fonte: "IBGE",                                        unid: "%",               category: "Inflação",               color: "#1D9E75" },
   { code: 188,   name: "INPC",                       fonte: "IBGE",                                        unid: "%",               category: "Inflação",               color: "#5DCAA5" },
